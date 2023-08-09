@@ -1,24 +1,43 @@
-r = range
-def spray1(x,y,m,n):
-    s = -b[x][y]
-    for i in r(x-m+1,x+m): s += b[i][y] if 0<=i<n else 0
-    for i in r(y-m+1,y+m): s += b[x][i] if 0<=i<n else 0
-    return s
+import java.util.Scanner;
 
-def spray2(x,y,m,n):
-    s = -b[x][y]
-    for i,j in zip(r(x-m+1,x+m),r(y-m+1,y+m)):
-        s += b[i][j] if 0<=i<n and 0<=j<n else 0
-    for i,j in zip(r(x-m+1,x+m),r(y+m-1,y-m,-1)):
-        s += b[i][j] if 0<=i<n and 0<=j<n else 0
-    return s
+public class Solution {
+	static int[][] map;
+	static int n;
+	static int m;
 
-f = lambda : map(int,input().split())
-for t in r(int(input())):
-    n,m = f()
-    s = 0
-    b = [[*f()] for _ in r(n)]
-    for i in r(n):
-        for j in r(n):
-            s = max(spray1(i,j,m,n), spray2(i,j,m,n), s)
-    print(f'#{t+1}',s)
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for (int t = 1; t <= T; t++) {
+			n = sc.nextInt();
+			m = sc.nextInt();
+			map = new int[n][n];
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++)
+					map[i][j] = sc.nextInt();
+			}
+			int ans = 0;
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++)
+					ans = Math.max(ans, spray(i, j));
+			}
+			System.out.printf("#%d %d\n", t, ans);
+		}
+	}
+
+	static int spray(int x, int y) {
+		int sum1 = -map[x][y];
+		int sum2 = -map[x][y];
+		for (int i = -m+1; i < m; i++) {
+			if (0 <= x+i && x+i < n) {
+				sum1 += map[x+i][y];
+				if (0 <= y+i && y+i < n) sum2 += map[x+i][y+i];
+			}
+			if (0 <= y+i && y+i < n) {
+				sum1 += map[x][y+i];
+				if (0 <= x-i && x-i < n) sum2 += map[x-i][y+i];
+			}
+		}
+		return Math.max(sum1, sum2);
+	}
+}
