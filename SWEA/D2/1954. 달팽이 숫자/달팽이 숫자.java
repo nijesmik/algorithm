@@ -7,14 +7,20 @@ public class Solution {
 		for (int t = 1; t <= T; t++) {
 			int n = sc.nextInt();
 			int[][] board = new int[n][n];
-			int num = 1;
-			for (int i = 0; i < n / 2; i++) {
-				for (int j = i; j < n-1-i; j++) board[i][j] = num++;
-				for (int j = i; j < n-1-i; j++) board[j][n-1-i] = num++;
-				for (int j = n-1-i; j > i; j--) board[n-1-i][j] = num++;
-				for (int j = n-1-i; j > i; j--) board[j][i] = num++;
+			int num = 1, x = 0, y = 0, dir = 0;
+			int[] dy = {1, 0, -1, 0}, dx = {0, 1, 0, -1};
+			while (num <= n*n) {
+				board[x][y] = num++;
+				x += dx[dir];
+				y += dy[dir];
+				if (x == n || x < 0 || y == n || y < 0 || board[x][y] != 0) {
+					x -= dx[dir];
+					y -= dy[dir];
+					dir = (dir + 1)%4;
+					x += dx[dir];
+					y += dy[dir];
+				}
 			}
-			if (n%2 == 1) board[n/2][n/2] = num;
 			System.out.printf("#%d\n", t);
 			for (int[] row : board) {
 				for (int k : row)
