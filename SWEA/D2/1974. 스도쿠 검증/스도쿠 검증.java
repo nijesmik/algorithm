@@ -16,29 +16,31 @@ public class Solution {
 		}
 	}
 	static int check() {
-		int sum1;
-		int sum2;
 		for (int i = 0; i < 9; i++) {
-			sum1 = 0;
-			sum2 = 0;
+			int[] arr1 = new int[9];
+			int[] arr2 = new int[9];
 			for (int j = 0; j < 9; j++) {
-				sum1 += map[i][j];
-				sum2 += map[j][i];
+				arr1[map[i][j]-1] += 1;
+				arr2[map[j][i]-1] += 1;
 			}
-			if (sum1 != 45 || sum2 != 45) return 0;
+			for (int j = 0; j < 9; j++) {
+				if (arr1[j] != 1 || arr2[j] != 1) return 0;
+			}
 		}
-		int[][] arr = {
+		int[][] box = {
 				{0,0},{0,3},{0,6},
 				{3,0},{3,3},{3,6},
 				{6,0},{6,3},{6,6}
 		};
-		for (int[] pos : arr) {
-			sum1 = 0;
+		for (int[] pos : box) {
+			int[] arr3 = new int[9];
 			for (int i = 0; i < 3; i++) {
-				for (int j = 0; j < 3; j++) 
-					sum1 += map[pos[0] + i][pos[1] + j];
+				for (int j = 0; j < 3; j++)
+					arr3[map[pos[0] + i][pos[1] + j]-1] += 1;
 			}
-			if (sum1 != 45) return 0;
+			for (int i = 0; i < 9; i++) {
+				if (arr3[i] != 1) return 0;
+			}
 		}
 		return 1;
 	}
