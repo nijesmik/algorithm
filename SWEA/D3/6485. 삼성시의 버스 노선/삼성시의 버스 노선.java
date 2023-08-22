@@ -6,22 +6,22 @@ public class Solution {
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			int n = sc.nextInt();
-			int[][] bus = new int[n][2];
-			for (int i = 0; i < n; i++) {
-				bus[i][0] = sc.nextInt();
-				bus[i][1] = sc.nextInt(); 
+			int[][] buses = new int[n][2];
+			for (int[] bus : buses) {
+				bus[0] = sc.nextInt();
+				bus[1] = sc.nextInt(); 
 			}
 			int p = sc.nextInt();
-			int[][] stop = new int[p][2];
-			for (int i = 0; i < p; i++) stop[i][0] = sc.nextInt(); 
-			for (int i = 0; i < n; i++) {
-				for (int j = 0; j < p; j++) {
-					if (bus[i][0] <= stop[j][0] && stop[j][0] <= bus[i][1])
-						stop[j][1] += 1;
+			int[][] stops = new int[p][2];
+			for (int i = 0; i < p; i++) stops[i][0] = sc.nextInt(); 
+			for (int[] stop : stops) {
+				for (int[] bus : buses) {
+					if (bus[0] <= stop[0] && stop[0] <= bus[1])
+						stop[1] += 1;
 				}
 			}
 			String ans = "#"+t;
-			for (int[] arr : stop) ans += " "+arr[1];
+			for (int[] stop : stops) ans += " "+stop[1];
 			System.out.println(ans);
 		}
 		sc.close();
