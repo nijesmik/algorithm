@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Solution {
 	public static void main(String[] args) {
@@ -6,24 +6,15 @@ public class Solution {
 		int T = sc.nextInt();
 		for (int t = 1; t <= T; t++) {
 			int n = sc.nextInt();
-			int[][] buses = new int[n][2];
-			for (int[] bus : buses) {
-				bus[0] = sc.nextInt();
-				bus[1] = sc.nextInt(); 
+			int[] stops = new int[5001];
+			for (int i = 0; i < n; i++) {
+				for (int a = sc.nextInt(), b = sc.nextInt(); a <= b; a++)
+					stops[a]++;
 			}
 			int p = sc.nextInt();
-			int[][] stops = new int[p][2];
-			for (int i = 0; i < p; i++) stops[i][0] = sc.nextInt(); 
-			for (int[] stop : stops) {
-				for (int[] bus : buses) {
-					if (bus[0] <= stop[0] && stop[0] <= bus[1])
-						stop[1] += 1;
-				}
-			}
 			String ans = "#"+t;
-			for (int[] stop : stops) ans += " "+stop[1];
+			for (int i = 0; i < p; i++) ans += " "+stops[sc.nextInt()];
 			System.out.println(ans);
 		}
-		sc.close();
 	}
 }
