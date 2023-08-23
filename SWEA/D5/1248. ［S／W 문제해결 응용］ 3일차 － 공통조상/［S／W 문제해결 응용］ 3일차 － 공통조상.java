@@ -27,18 +27,15 @@ public class Solution {
 
 	static int getAncestor(int a, int b) {
 		int num = a;
-		ArrayList<Integer> list = new ArrayList<>();
 		while (num > 1) {
 			int p = tree[num][2];
-			list.add(p);
+			tree[num][2] = -1;
 			num = p;
 		}
 		num = b;
 		while (num > 1) {
 			int p = tree[num][2];
-			for (int e : list) {
-				if (e == p) return p;
-			}
+			if (p == -1) return num;
 			num = p;
 		}
 		return 1;
