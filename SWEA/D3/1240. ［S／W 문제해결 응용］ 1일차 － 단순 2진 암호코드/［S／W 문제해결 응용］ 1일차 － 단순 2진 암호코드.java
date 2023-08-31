@@ -1,19 +1,22 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Solution {
-	static int[] arr = new int[128];
-	static char[][] code;
+	static Map<String, Integer> map = new HashMap<>();
+	static String[] code;
 	static int n, m;
 
 	public static void main(String[] args) {
-		arr[13] = 0; arr[25] = 1; arr[19] = 2; arr[61] = 3; arr[35] = 4;
-		arr[49] = 5; arr[47] = 6; arr[59] = 7; arr[55] = 8; arr[11] = 9;
+		map.put("0001101",0); map.put("0011001",1);
+		map.put("0010011",2); map.put("0111101",3);
+		map.put("0100011",4); map.put("0110001",5);
+		map.put("0101111",6); map.put("0111011",7);
+		map.put("0110111",8); map.put("0001011",9);
 		Scanner sc = new Scanner(System.in);
 		int tc = sc.nextInt();
 		for (int t = 1; t <= tc; t++) {
 			n = sc.nextInt(); m = sc.nextInt();
-			code = new char[n][];
-			for (int i = 0; i < n; i++) code[i] = sc.next().toCharArray();
+			code = new String[n];
+			for (int i = 0; i < n; i++) code[i] = sc.next();
 			System.out.printf("#%d %d\n", t, decode());
 		}
 	}
@@ -21,25 +24,21 @@ public class Solution {
 	static int decode() {
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m-56; j++) {
-                int check = check(i, j);
-				if (check != -1) return check; 
+				int check = check(code[i], j);
+				if (check != -1) return check;
 			}
 		}
-        return 0;
+		return 0;
 	}
 
-	static int check(int i, int j) {
-		int num = 0, tmp = 0, check = 0;
-		for (int k = 0; k < 56; k++) {
-            tmp = tmp*2 + code[i][j+k]-'0';
-            if (k%7==6) {
-            	if (tmp == 0) return -1;
-            	if (tmp != 13 && arr[tmp] == 0) return -1;
-            	num += arr[tmp];
-            	check += k%2 == 0 ? arr[tmp]*3 : arr[tmp];
-            	tmp = 0;
-            }
-        }
+	static int check(String str, int idx) {
+		int num = 0, check = 0;
+		for (int i = 0; i < 8; i++) {
+			Integer tmp = map.get(str.substring(idx+i*7, idx+i*7+7));
+			if (tmp == null) return -1;
+			num += tmp;
+			check += i%2 == 0 ? tmp*3 : tmp;
+		}
 		return check%10==0 ? num : 0;
 	}
 }
