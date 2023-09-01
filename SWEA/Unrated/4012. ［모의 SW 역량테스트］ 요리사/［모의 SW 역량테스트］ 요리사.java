@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Solution {
 	static int[][] synergy;
@@ -18,7 +18,8 @@ public class Solution {
 			r = n / 2;
 			min = 20000 * r;
 			select = new boolean[n];
-			getAnswer(0, 0);
+            select[0] = true;
+			getAnswer(1, 1);
 			System.out.printf("#%d %d\n", t, min);
 		}
 	}
