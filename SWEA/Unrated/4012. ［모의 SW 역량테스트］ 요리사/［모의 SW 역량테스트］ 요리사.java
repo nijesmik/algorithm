@@ -18,7 +18,7 @@ public class Solution {
 			r = n / 2;
 			min = 20000 * r;
 			select = new boolean[n];
-            select[0] = true;
+			select[0] = true; // 중복 제거
 			getAnswer(1, 1);
 			System.out.printf("#%d %d\n", t, min);
 		}
