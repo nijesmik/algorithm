@@ -1,9 +1,31 @@
 # 🔥 알고리즘 연습 (230807~)
 
+## 9월 1일
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+|6808|규영이와 인영이의 카드게임|D3|:-:|:-:|
+|2806|N-Queen|D3|:-:|:-:|
+|1247|최적 경로|D5|:-:|:-:|
+|2504|괄호의 값|<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/2504)|[풀이](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/2504.%E2%80%85%EA%B4%84%ED%98%B8%EC%9D%98%E2%80%85%EA%B0%92/%EA%B4%84%ED%98%B8%EC%9D%98%E2%80%85%EA%B0%92.java)|
+
 ## 8월 31일
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
 |:-:|:-:|:-:|:-:|:-:|
 |2493|탑|<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/2493)|[링크](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/2493.%E2%80%85%ED%83%91/%ED%83%91.java)|
+
+## 8월 30일
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+|5215|햄버거 다이어트|D3|[SWEA](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWT-lPB6dHUDFAVT)|[링크](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D3/5215.%E2%80%85%ED%96%84%EB%B2%84%EA%B1%B0%E2%80%85%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8/%ED%96%84%EB%B2%84%EA%B1%B0%E2%80%85%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8.java)|
+|4012|부분 수열의 합|D3|[SWEA](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV7IzvG6EksDFAXB)|[풀이](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D3/2817.%E2%80%85%EB%B6%80%EB%B6%84%E2%80%85%EC%88%98%EC%97%B4%EC%9D%98%E2%80%85%ED%95%A9/%EB%B6%80%EB%B6%84%E2%80%85%EC%88%98%EC%97%B4%EC%9D%98%E2%80%85%ED%95%A9.java)|
+|2817|요리사|Unrated|[SWEA](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWIeUtVakTMDFAVH)|[풀이](https://github.com/nijesmik/Algorithm/blob/main/SWEA/Unrated/4012.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EC%9A%94%EB%A6%AC%EC%82%AC/%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EC%9A%94%EB%A6%AC%EC%82%AC.java)|
+
+## 8월 29일
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+|10726|이진수 표현|D3|[SWEA](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AXRSXf_a9qsDFAXS)|[풀이](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D3/10726.%E2%80%85%EC%9D%B4%EC%A7%84%EC%88%98%E2%80%85%ED%91%9C%ED%98%84/%EC%9D%B4%EC%A7%84%EC%88%98%E2%80%85%ED%91%9C%ED%98%84.java)|
+|1873|상호의 배틀필드|D3|[SWEA](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LyE7KD2ADFAXc)|[풀이](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D3/1873.%E2%80%85%EC%83%81%ED%98%B8%EC%9D%98%E2%80%85%EB%B0%B0%ED%8B%80%ED%95%84%EB%93%9C/%EC%83%81%ED%98%B8%EC%9D%98%E2%80%85%EB%B0%B0%ED%8B%80%ED%95%84%EB%93%9C.java)|
+|1240|단순 2진 암호코드|D3|[SWEA](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV15FZuqAL4CFAYD)|[풀이](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D3/1240.%E2%80%85%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EC%9D%91%EC%9A%A9%EF%BC%BD%E2%80%851%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85%EB%8B%A8%EC%88%9C%E2%80%852%EC%A7%84%E2%80%85%EC%95%94%ED%98%B8%EC%BD%94%EB%93%9C/%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EC%9D%91%EC%9A%A9%EF%BC%BD%E2%80%851%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85%EB%8B%A8%EC%88%9C%E2%80%852%EC%A7%84%E2%80%85%EC%95%94%ED%98%B8%EC%BD%94%EB%93%9C.java)|
 
 ## 8월 27일
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
