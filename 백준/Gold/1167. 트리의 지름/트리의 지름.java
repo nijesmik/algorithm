@@ -3,39 +3,36 @@ import java.util.*;
 
 public class Main {
 	static Map<Integer, List<Integer[]>> map;
-	static boolean[] visit;
 	static int n, ans, end;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		n = Integer.parseInt(br.readLine());
 		map = new HashMap<>();
-		visit = new boolean[n+1];
 		for (int i = 0; i < n; i++) {
 			st = new StringTokenizer(br.readLine());
-			int start = Integer.parseInt(st.nextToken());
+			int from = Integer.parseInt(st.nextToken());
 			List<Integer[]> list = new ArrayList<>();
-			int end = Integer.parseInt(st.nextToken());
-			while (end > 0) {
-				list.add(new Integer[]{end, Integer.parseInt(st.nextToken())});
-				end = Integer.parseInt(st.nextToken());
+			while (true) {
+				int to = Integer.parseInt(st.nextToken());
+				if (to < 0) break;
+				list.add(new Integer[]{to, Integer.parseInt(st.nextToken())});
 			}
-			map.put(start, list);
+			map.put(from, list);
 		}
 		ans = 0;
-		dfs(1, 0);
-		dfs(end, 0);
+		dfs(1, 0, 0);
+		dfs(end, 0, 0);
 		System.out.println(ans);
 	}
-	static void dfs(int i, int len) {
-		if (visit[i]) return;
-		visit[i] = true;
+	static void dfs(int cur, int len, int prev) {
 		if (len > ans) {
 			ans = len;
-			end = i;
+			end = cur;
 		}
-		for (Integer[] arr : map.get(i))
-			dfs(arr[0], len+arr[1]);
-		visit[i] = false;
+		for (Integer[] arr : map.get(cur)) {
+			if (arr[0] != prev)
+				dfs(arr[0], len+arr[1], cur);
+		}
 	}
 }
