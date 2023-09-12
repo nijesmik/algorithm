@@ -1,6 +1,27 @@
 # 🔥 알고리즘 연습 (230807~)
 
-## 9월 4일
+## 9월 12일 (화)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+|15681|트리와 쿼리|<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/15681)|[링크](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/15681.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%99%80%E2%80%85%EC%BF%BC%EB%A6%AC/%ED%8A%B8%EB%A6%AC%EC%99%80%E2%80%85%EC%BF%BC%EB%A6%AC.java)|
+
+## 9월 11일 (월)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+|1068|트리|<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/1068)|[링크](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/1068.%E2%80%85%ED%8A%B8%EB%A6%AC/%ED%8A%B8%EB%A6%AC.java)|
+
+## 9월 6일 (수)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+|11047|동전 0|<img src="https://static.solved.ac/tier_small/7.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/11047)|[링크](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/11047.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%850/%EB%8F%99%EC%A0%84%E2%80%850.java)|
+|1167|트리의 지름|<img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/1167)|[링크](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/1167.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EC%A7%80%EB%A6%84/%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EC%A7%80%EB%A6%84.java)|
+
+## 9월 5일 (화)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+|5397|키로거|<img src="https://static.solved.ac/tier_small/9.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/5397)|[링크](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/5397.%E2%80%85%ED%82%A4%EB%A1%9C%EA%B1%B0/%ED%82%A4%EB%A1%9C%EA%B1%B0.java)|
+
+## 9월 4일 (월)
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
 |:-:|:-:|:-:|:-:|:-:|
 |1486|장훈이의 높은 선반|D4|[SWEA](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV2b7Yf6ABcBBASw)|[링크](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D4/1486.%E2%80%85%EC%9E%A5%ED%9B%88%EC%9D%B4%EC%9D%98%E2%80%85%EB%86%92%EC%9D%80%E2%80%85%EC%84%A0%EB%B0%98/%EC%9E%A5%ED%9B%88%EC%9D%B4%EC%9D%98%E2%80%85%EB%86%92%EC%9D%80%E2%80%85%EC%84%A0%EB%B0%98.java)|
