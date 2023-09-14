@@ -1,30 +1,27 @@
 import java.util.*;
 
 public class Main {
-	static class Meeting {
-		int start;
-		int end;
-		Meeting (int s, int e) {
-			start = s;
-			end = e;
-		}
-		int getStart() {return start;}
-		int getEnd() {return end;}
-	}
-	static int cnt, prev;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
-		List<Meeting> list = new ArrayList<>();
-		while (t-- > 0)
-			list.add(new Meeting(sc.nextInt(), sc.nextInt()));
-		cnt = 0; prev = 0;
-		list.stream().sorted(Comparator.comparing(Meeting::getEnd).thenComparing(Meeting::getStart)).forEach(meeting->{
-			if (meeting.start >= prev) {
-				cnt++;
-				prev = meeting.end;
+		int n = sc.nextInt();
+		int[][] meeting = new int[n][2];
+		while (n-- > 0) {
+			meeting[n][0] = sc.nextInt();
+			meeting[n][1] = sc.nextInt();
+		}
+		Arrays.sort(meeting, new Comparator<int[]>() {
+			public int compare(int[] a, int[] b) {
+				if (a[1] == b[1]) return a[0] - b[0];
+				return a[1] - b[1];
 			}
 		});
+		int cnt = 0, prev = 0;
+		for (int[] arr : meeting) {
+			if (arr[0] >= prev) {
+				cnt++;
+				prev = arr[1];
+			}
+		}
 		System.out.println(cnt);
 	}
 }
