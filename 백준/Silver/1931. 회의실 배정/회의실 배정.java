@@ -9,12 +9,7 @@ public class Main {
 			meeting[n][0] = sc.nextInt();
 			meeting[n][1] = sc.nextInt();
 		}
-		Arrays.sort(meeting, new Comparator<int[]>() {
-			public int compare(int[] a, int[] b) {
-				if (a[1] == b[1]) return a[0] - b[0];
-				return a[1] - b[1];
-			}
-		});
+		Arrays.sort(meeting, (a,b)-> a[1] == b[1] ? a[0] - b[0] : a[1] - b[1]);
 		int cnt = 0, prev = 0;
 		for (int[] arr : meeting) {
 			if (arr[0] >= prev) {
