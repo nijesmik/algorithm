@@ -1,5 +1,30 @@
 # 🔥 알고리즘 연습 (230807~)
 
+<!--    TEMPLATE
+
+## 9월 14일 (목)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| ❓ | ❓ |<img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/❓)|[링크]( ❓ )|
+
+-->
+
+## 9월 18일 (월)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| 16401 | 과자 나눠주기 |<img src="https://static.solved.ac/tier_small/9.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/16401)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/16401.%E2%80%85%EA%B3%BC%EC%9E%90%E2%80%85%EB%82%98%EB%88%A0%EC%A3%BC%EA%B8%B0/%EA%B3%BC%EC%9E%90%E2%80%85%EB%82%98%EB%88%A0%EC%A3%BC%EA%B8%B0.java )|
+
+## 9월 14일 (목)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| 1931 | 회의실 배정 |<img src="https://static.solved.ac/tier_small/10.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/1931)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/1931.%E2%80%85%ED%9A%8C%EC%9D%98%EC%8B%A4%E2%80%85%EB%B0%B0%EC%A0%95/%ED%9A%8C%EC%9D%98%EC%8B%A4%E2%80%85%EB%B0%B0%EC%A0%95.java )|
+
+## 9월 13일 (수)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| 11501 | 주식 |<img src="https://static.solved.ac/tier_small/9.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/11501)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/11501.%E2%80%85%EC%A3%BC%EC%8B%9D/%EC%A3%BC%EC%8B%9D.java )|
+
+
 ## 9월 12일 (화)
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
 |:-:|:-:|:-:|:-:|:-:|
