@@ -2,17 +2,41 @@
 
 <!--    TEMPLATE
 
-## 9월 14일 (목)
+## 9월 21일 (목)
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
 |:-:|:-:|:-:|:-:|:-:|
 | ❓ | ❓ |<img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/❓)|[링크]( ❓ )|
+| ❓ | ❓ | ❓ |[SWEA]( ❓ )|[링크]( ❓ )|
 
 -->
+
+## 9월 21일 (목)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| 11399 | ATM |<img src="https://static.solved.ac/tier_small/7.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/11399)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/11399.%E2%80%85ATM/ATM.java )|
+| 1080 | 행렬 |<img src="https://static.solved.ac/tier_small/10.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/1080)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/1080.%E2%80%85%ED%96%89%EB%A0%AC/%ED%96%89%EB%A0%AC.java )|
+| 18869 | 멀티버스 |<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/18869)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/18869.%E2%80%85%EB%A9%80%ED%8B%B0%EB%B2%84%EC%8A%A4%E2%80%85%E2%85%A1/%EB%A9%80%ED%8B%B0%EB%B2%84%EC%8A%A4%E2%80%85%E2%85%A1.java )|
+| 1967 | 트리의 지름 |<img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/1967)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/1967.%E2%80%85%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EC%A7%80%EB%A6%84/%ED%8A%B8%EB%A6%AC%EC%9D%98%E2%80%85%EC%A7%80%EB%A6%84.java )|
+
+## 9월 20일 (수)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| 7733 | 치즈 도둑 | D4 |[SWEA]( https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWrDOdQqRCUDFARG )|[링크]( https://github.com/nijesmik/Algorithm/blob/main/SWEA/D4/7733.%E2%80%85%EC%B9%98%EC%A6%88%E2%80%85%EB%8F%84%EB%91%91/%EC%B9%98%EC%A6%88%E2%80%85%EB%8F%84%EB%91%91.java )|
+| 5658 | 보물상자 비밀번호 | Unrated |[SWEA]( https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRUN9KfZ8DFAUo )|[링크]( https://github.com/nijesmik/Algorithm/blob/main/SWEA/Unrated/5658.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EB%B3%B4%EB%AC%BC%EC%83%81%EC%9E%90%E2%80%85%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8/%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EB%B3%B4%EB%AC%BC%EC%83%81%EC%9E%90%E2%80%85%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8.java )|
+
+## 9월 19일 (화)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| 6057 | 그래프의 삼각형 | D3 |[SWEA]( https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWbHcWd6AFcDFAV0 )| [링크](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D3/6057.%E2%80%85%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98%E2%80%85%EC%82%BC%EA%B0%81%ED%98%95/%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98%E2%80%85%EC%82%BC%EA%B0%81%ED%98%95.java) |
+
 
 ## 9월 18일 (월)
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
 |:-:|:-:|:-:|:-:|:-:|
+| 2814 | 최장 경로 | D3 |[SWEA]( https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV7GOPPaAeMDFAXB )|[링크](https://github.com/nijesmik/Algorithm/blob/main/SWEA/D3/2814.%E2%80%85%EC%B5%9C%EC%9E%A5%E2%80%85%EA%B2%BD%EB%A1%9C/%EC%B5%9C%EC%9E%A5%E2%80%85%EA%B2%BD%EB%A1%9C.java) |
 | 16401 | 과자 나눠주기 |<img src="https://static.solved.ac/tier_small/9.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/16401)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Silver/16401.%E2%80%85%EA%B3%BC%EC%9E%90%E2%80%85%EB%82%98%EB%88%A0%EC%A3%BC%EA%B8%B0/%EA%B3%BC%EC%9E%90%E2%80%85%EB%82%98%EB%88%A0%EC%A3%BC%EA%B8%B0.java )|
+| 2170 | 선 긋기 |<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/2170)| [링크](https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/2170.%E2%80%85%EC%84%A0%E2%80%85%EA%B8%8B%EA%B8%B0/%EC%84%A0%E2%80%85%EA%B8%8B%EA%B8%B0.java) |
+
 
 ## 9월 14일 (목)
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
