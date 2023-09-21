@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Solution {
 	static char[] arr;
-	static List<Integer> list;
-	static int n, k, prev, ans;
+	static Set<Integer> set;
+	static int n, k;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int tc = sc.nextInt();
@@ -11,17 +11,13 @@ public class Solution {
 			n = sc.nextInt();
 			k = sc.nextInt();
 			arr = sc.next().toCharArray();
-			list = new ArrayList<>();
+			set = new HashSet<>();
 			for (int j = 0; j < n/4; j++) {
 				createNum(j);
 			}
-			prev = 0;
-			list.stream().sorted(Comparator.reverseOrder()).forEach(a->{
-				if (a != prev) k--;
-				if (k == 0) ans = a;
-                prev = a;
-			});
-			System.out.printf("#%d %d\n", t, ans);
+			List<Integer> list = new ArrayList<>(set);
+			list.sort(Comparator.reverseOrder());
+			System.out.printf("#%d %d\n", t, list.get(k-1));
 		}
 	}
 	static void createNum(int idx) {
@@ -32,7 +28,7 @@ public class Solution {
 			String num = "";
 			for (int j = 0; j < n/4; j++)
 				num += tmp[i+j];
-			list.add(Integer.parseInt(num, 16));
+			set.add(Integer.parseInt(num, 16));
 		}
 	}
 }
