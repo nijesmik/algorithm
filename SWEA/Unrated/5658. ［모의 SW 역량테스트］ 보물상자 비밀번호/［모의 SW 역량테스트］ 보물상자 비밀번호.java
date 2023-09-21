@@ -21,14 +21,11 @@ public class Solution {
 		}
 	}
 	static void createNum(int idx) {
-		char[] tmp = new char[n];
+		String str = "";
 		for (int i = 0; i < n; i++)
-			tmp[i] = arr[(i+idx)%n];
+			str += arr[(i+idx)%n];
 		for (int i = 0; i < n; i+=n/4) {
-			String num = "";
-			for (int j = 0; j < n/4; j++)
-				num += tmp[i+j];
-			set.add(Integer.parseInt(num, 16));
+			set.add(Integer.parseInt(str.substring(i, i+n/4), 16));
 		}
 	}
 }
