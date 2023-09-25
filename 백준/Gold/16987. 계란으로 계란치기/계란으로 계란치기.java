@@ -17,10 +17,12 @@ public class Main {
 		System.out.println(max);
 	}
 	static void dfs(int idx) {
-		if (idx == n) {
-			getMax();
-			return;
+		int cnt = 0;
+		for (int i = 0; i < n; i++) {
+			if (egg[i] <= 0) cnt++;
 		}
+		max = Math.max(cnt, max);
+		if (idx == n) return;
 		if (egg[idx] <= 0) {
 			dfs(idx+1);
 			return;
@@ -33,13 +35,5 @@ public class Main {
 			egg[i] += weight[idx];
 			egg[idx] += weight[i];
 		}
-		getMax();
-	}
-	static void getMax() {
-		int cnt = 0;
-		for (int i = 0; i < n; i++) {
-			if (egg[i] <= 0) cnt++;
-		}
-		max = Math.max(cnt, max);
 	}
 }
