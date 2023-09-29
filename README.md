@@ -10,6 +10,40 @@
 
 -->
 
+## 9월 27일 (수)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| ❓ | 결혼식 |<img src="https://static.solved.ac/tier_small/9.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/❓)|[링크]( ❓ )|
+
+## 9월 25일 (월)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| 16987 | 계란으로 계란치기 |<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/16987)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/16987.%E2%80%85%EA%B3%84%EB%9E%80%EC%9C%BC%EB%A1%9C%E2%80%85%EA%B3%84%EB%9E%80%EC%B9%98%EA%B8%B0/%EA%B3%84%EB%9E%80%EC%9C%BC%EB%A1%9C%E2%80%85%EA%B3%84%EB%9E%80%EC%B9%98%EA%B8%B0.java )|
+
+## 9월 24일 (일)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| ❓ | 작업순서 | D6 |[SWEA]( ❓ )|[링크]( ❓ )|
+| 19539 | 사과나무 |<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/19539)|[링크]( https://github.com/nijesmik/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/Gold/19539.%E2%80%85%EC%82%AC%EA%B3%BC%EB%82%98%EB%AC%B4/%EC%82%AC%EA%B3%BC%EB%82%98%EB%AC%B4.java )|
+
+## 9월 23일 (토)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| ❓ | 보급로 | D4 |[SWEA]( ❓ )|[링크]( ❓ )|
+| ❓ | Contact | D4 |[SWEA]( ❓ )|[링크]( ❓ )|
+| ❓ | 로또 |<img src="https://static.solved.ac/tier_small/9.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/❓)|[링크]( ❓ )|
+| ❓ | 유기농 배추 |<img src="https://static.solved.ac/tier_small/9.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/❓)|[링크]( ❓ )|
+| ❓ | 토마토 |<img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/>|[백준](https://www.acmicpc.net/problem/❓)|[링크]( ❓ )|
+
+## 9월 22일 (금)
+|문제 번호|문제 이름|난이도|문제 링크|풀이|
+|:-:|:-:|:-:|:-:|:-:|
+| ❓ | 서로소 집합 | D4 |[SWEA]( ❓ )|[링크]( ❓ )|
+| ❓ | 하나로 | D4 |[SWEA]( ❓ )|[링크]( ❓ )|
+| ❓ | 창용 마을 무리의 개수 | D4 |[SWEA]( ❓ )|[링크]( ❓ )|
+| ❓ | 수영장 | Unrated |[SWEA]( ❓ )|[링크]( ❓ )|
+| ❓ | 점심 식사시간 | Unrated |[SWEA]( ❓ )|[링크]( ❓ )|
+
 ## 9월 21일 (목)
 |문제 번호|문제 이름|난이도|문제 링크|풀이|
 |:-:|:-:|:-:|:-:|:-:|
