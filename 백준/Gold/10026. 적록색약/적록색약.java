@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Main {
 	static char[][] board;
-	static int n, cnt1, cnt2;
-	static boolean[][] visit1, visit2;
+	static int n, cnt;
+	static boolean[][] visit;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		n = sc.nextInt();
@@ -11,37 +11,32 @@ public class Main {
 		for (int i = 0; i < n; i++) {
 			board[i] = sc.next().toCharArray();
 		}
-		cnt1 = cnt2 = 0;
-		visit1 = new boolean[n][n];
-		visit2 = new boolean[n][n];
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				if (!visit1[i][j]) {
-					cnt1++;
-					dfs(i, j, board[i][j], visit1);
+		StringBuilder sb = new StringBuilder();
+		for (int k = 0; k < 2; k++) {
+			cnt = 0;
+			visit = new boolean[n][n];
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++) {
+					if (!visit[i][j]) {
+						cnt++;
+						dfs(i, j, board[i][j]);
+					}
 				}
 			}
+			sb.append(cnt+" ");
 		}
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				if (!visit2[i][j]) {
-					cnt2++;
-					dfs(i, j, board[i][j], visit2);
-				}
-			}
-		}
-		System.out.printf("%d %d\n", cnt1, cnt2);
+		System.out.println(sb);
 	}
 	static int[] dr = {1, -1, 0, 0};
 	static int[] dc = {0, 0, 1, -1};
-	static void dfs(int r, int c, char color, boolean[][] visit) {
+	static void dfs(int r, int c, char color) {
 		if (visit[r][c]) return;
 		visit[r][c] = true;
 		if (board[r][c] == 'G') board[r][c] = 'R';
 		for (int i = 0; i < 4; i++) {
 			int nr = r+dr[i], nc = c+dc[i];
 			if (nr >= 0 && nr < n && nc >= 0 && nc < n && board[nr][nc] == color)
-				dfs(nr, nc, color, visit);
+				dfs(nr, nc, color);
 		}
 	}
 }
