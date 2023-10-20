@@ -38,13 +38,13 @@ public class Main {
 		}
 		double ans = 0;
 		int cnt = 1;
-		while (!pq.isEmpty()) {
+		while (cnt < n) {
 			Edge cur = pq.poll();
 			int p1 = find(cur.a), p2 = find(cur.b);
 			if (p1 == p2) continue;
 			parent[p2] = p1;
 			ans += Math.sqrt(cur.dist);
-			if (++cnt == n) break;
+			cnt++;
 		}
 		System.out.printf("%.2f\n", ans);
 	}
