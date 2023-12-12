@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     static int N, M, V, ans, wall;
@@ -31,9 +29,9 @@ public class Main {
         }
         dfs(0,0);
         if (ans == Integer.MAX_VALUE) {
-            ans = 0;
+            ans = -1;
         }
-        System.out.println(ans-1);
+        System.out.println(ans);
     }
 
     static void dfs(int idx, int cnt) {
@@ -65,7 +63,8 @@ public class Main {
         int[] dr = { 1, -1, 0, 0 };
         int[] dc = { 0, 0, 1, -1 };
         int time = 0;
-        while (!q.isEmpty()) {
+        while (total > 0 && !q.isEmpty()) {
+            time++;
             int size = q.size();
             while (size-- > 0) {
                 Pos cur = q.poll();
@@ -78,7 +77,6 @@ public class Main {
                     }
                 }
             }
-            time++;
             if (time >= ans) {
                 return;
             }
