@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class Main {
     static int R, C;
     static char[][] map;
-    static List<Sheep> sheeps;
+    static List<Wolf> wolves;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         R = sc.nextInt(); C = sc.nextInt();
         map = new char[R][];
-        sheeps = new ArrayList<>();
+        wolves = new ArrayList<>();
         for (int i = 0; i < R; i++) {
             map[i] = sc.next().toCharArray();
             for (int j = 0; j < C; j++) {
-                if (map[i][j] == 'S') {
-                    sheeps.add(new Sheep(i, j));
+                if (map[i][j] == 'W') {
+                    wolves.add(new Wolf(i, j));
                 }
             }
         }
@@ -35,11 +35,11 @@ public class Main {
     static int[] dr = {1, -1, 0, 0};
     static int[] dc = {0, 0, 1, -1};
     static int fence() {
-        for (Sheep sheep : sheeps) {
+        for (Wolf wolf : wolves) {
             for (int i = 0; i < 4; i++) {
-                int nr = sheep.r + dr[i], nc = sheep.c + dc[i];
+                int nr = wolf.r + dr[i], nc = wolf.c + dc[i];
                 if (nr >= 0 && nr < R && nc >= 0 && nc < C) {
-                    if (map[nr][nc] == 'W') return 0;
+                    if (map[nr][nc] == 'S') return 0;
                     if (map[nr][nc] == '.') map[nr][nc] = 'D';
                 }
             }
@@ -47,9 +47,9 @@ public class Main {
         return 1;
     }
 
-    static class Sheep {
+    static class Wolf {
         int r, c;
-        Sheep(int r, int c) {
+        Wolf(int r, int c) {
             this.r = r;
             this.c = c;
         }
