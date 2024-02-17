@@ -1,42 +1,35 @@
 import java.util.*;
 
 public class Main {
-    static int target, ans;
+    static int digit, target, ans;
     static boolean[] disable;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String targetString = sc.next();
         target = Integer.parseInt(targetString);
+        digit = targetString.length();
         int n = sc.nextInt();
         disable = new boolean[10];
         while (n-- > 0) {
             disable[sc.nextInt()] = true;
         }
-        int number = 0;
         ans = Math.abs(target - 100);
-        while (number < 9_999_999) {
-            int digit = test(number);
-            if (digit > 0) {
-                ans = Math.min(ans, Math.abs(target - number) + digit);
-            }
-            number++;
-        }
+        dfs(0, 0);
         System.out.println(ans);
     }
 
-    static int test(int number) {
-        if (number == 0 && !disable[0]) {
-            return 1;
+    static void dfs(int depth, int created) {
+        if (depth > 0) {
+            ans = Math.min(ans, Math.abs(target - created) + depth);
         }
-        int digit = 0;
-        while (number > 0) {
-            if (disable[number % 10]) {
-                return 0;
+        if (depth == digit + 1) {
+            return;
+        }
+        for (int i = 0; i < 10; i++) {
+            if (!disable[i]) {
+                dfs(depth + 1, created * 10 + i);
             }
-            number /= 10;
-            digit++;
         }
-        return digit;
     }
 }
