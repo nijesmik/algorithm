@@ -7,17 +7,17 @@ public class Main {
         int n = text.length(), c = (int) Math.sqrt(n);
         while (c > 0) {
             if (n % c == 0) {
-                int r = n / c;
-                StringBuilder sb = new StringBuilder();
-                for (int j = 0; j < c; j++) {
-                    for (int i = 0; i < r; i++) {
-                        sb.append(text.charAt(i * c + j));
-                    }
-                }
-                System.out.println(sb);
-                return;
+                break;
             }
             c--;
         }
+        int r = n / c;
+        StringBuilder sb = new StringBuilder();
+        for (int j = 0; j < c; j++) {
+            for (int i = 0; i < r; i++) {
+                sb.append(text.charAt(i * c + j));
+            }
+        }
+        System.out.println(sb);
     }
 }
