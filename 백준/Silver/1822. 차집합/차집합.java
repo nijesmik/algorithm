@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int sizeA = sc.nextInt(), sizeB = sc.nextInt();
-        Set<Integer> setA = new HashSet<>();
+        Set<Integer> setA = new TreeSet<>();
         for (int i = 0; i < sizeA; i++) {
             setA.add(sc.nextInt());
         }
@@ -13,9 +13,9 @@ public class Main {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(setA.size() + "\n");
-        setA.stream().sorted().forEach(a -> {
-            sb.append(a + " ");
-        });
+        for (int num : setA) {
+            sb.append(num + " ");
+        };
         System.out.println(sb);
     }
 }
