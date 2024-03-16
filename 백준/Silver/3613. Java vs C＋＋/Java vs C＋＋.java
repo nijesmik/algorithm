@@ -1,29 +1,33 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 	static StringBuilder sb;
+	static char[] words;
 	static int n;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String input = sc.next();
-		String ans = convert(input.toCharArray(), input.contains("_"));
+
+		words = input.toCharArray();
+		n = words.length;
+
+		String ans = convert(input.contains("_"));
 		System.out.println(ans);
 	}
 
-	static String convert(char[] words, boolean cpp) {
-		n = words.length;
+	static String convert(boolean isCpp) {
 		if (!Character.isLowerCase(words[0]) || words[n - 1] == '_') {
 			return "Error!";
 		}
 		sb = new StringBuilder();
-		if (cpp) {
-			return toJavaFormat(words);
+		if (isCpp) {
+			return toJava();
 		}
-		return toCppFormat(words);
+		return toCpp();
 	}
 
-	static String toCppFormat(char[] words) {
+	static String toCpp() {
 		for (char c : words) {
 			if (c < 'a') {
 				sb.append('_');
@@ -34,7 +38,7 @@ public class Main {
 		return sb.toString();
 	}
 
-	static String toJavaFormat(char[] words) {
+	static String toJava() {
 		int i = 0;
 		while (i < n) {
 			char c = words[i++];
