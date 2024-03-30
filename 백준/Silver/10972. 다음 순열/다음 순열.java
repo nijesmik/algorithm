@@ -1,52 +1,40 @@
 import java.util.Scanner;
 
 public class Main {
-    static int N, arr[];
-    static boolean visited[], flag;
+    static int[] arr;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        N = sc.nextInt();
-        arr = new int[N];
-        flag = false;
-        visited = new boolean[N+1];
-        for (int i = 0; i < N; i++) {
+        int n = sc.nextInt();
+        arr = new int[n];
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
-            visited[i+1] = true;
         }
-
-        int idx = N - 1;
-        visited[arr[idx]] = false;
-        while (idx-- > 0 && !flag) {
-            visited[arr[idx]] = false;
-            permutation(idx, arr[idx] + 1);
+        int top = n - 1;
+        while (top > 0 && arr[top - 1] > arr[top]) {
+            top--;
         }
-        if (!flag) {
+        if (top == 0) {
             System.out.println(-1);
+            return;
         }
-    }
-
-    static void print() {
-        for (int i = 0; i < N; i++) {
+        int target = n - 1;
+        while (arr[top - 1] > arr[target]) {
+            target--;
+        }
+        swap(top - 1, target);
+        target = n - 1;
+        while (top < target) {
+            swap(top++, target--);
+        }
+        for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
     }
 
-    static void permutation(int depth, int start) {
-        if (depth == N) {
-            if (!flag) {
-                flag = true;
-                print();
-            }
-            return;
-        }
-        for (int i = start; i < N+1; i++) {
-            if (!visited[i]) {
-                arr[depth] = i;
-                visited[i] = true;
-                permutation(depth+1, 1);
-                visited[i] = false;
-            }
-        }
+    static void swap(int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
     }
 }
