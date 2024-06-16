@@ -1,19 +1,14 @@
 function solution(s) {
-    let count = 0;
-    let zero = 0;
+    const answer = [0, 0];
 
     while (s !== "1") {
-        let one = 0;
-        for (let i = 0; i < s.length; i++) {
-            if (s[i] === '1') {
-                one++;
-            } else {
-                zero++;
-            }
-        }
+        const length = s.length;
+        s = s.replaceAll("0", "");
+        const one = s.length;
         s = one.toString(2);
-        count++;
+        answer[0]++;
+        answer[1] += length - one;
     }
     
-    return [count, zero];
+    return answer;
 }
