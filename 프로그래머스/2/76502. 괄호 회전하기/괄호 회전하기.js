@@ -1,6 +1,4 @@
 function solution(s) {
-    s = s.split('');
-    
     let answer = 0;
     
     for (let i = 0; i < s.length; i++) {
@@ -24,7 +22,7 @@ function solution(s) {
             answer++;
         }
         
-        s.push(s.shift());
+        s = s.slice(1) + s[0];
     }
     
     return answer;
