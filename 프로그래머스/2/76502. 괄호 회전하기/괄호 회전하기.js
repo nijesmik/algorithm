@@ -18,7 +18,7 @@ function solution(s) {
             }
         }
         
-        if (stack.length === 0) {
+        if (!stack.length) {
             answer++;
         }
         
