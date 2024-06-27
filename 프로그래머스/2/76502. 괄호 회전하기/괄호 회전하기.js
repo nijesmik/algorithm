@@ -5,7 +5,7 @@ function solution(s) {
         const stack = [];
         
         for (let j = 0; j < s.length; j++) {
-            const top = stack[stack.length - 1];
+            const top = stack.at(-1);
             
             if (s[j] === ']' && top === '[') {
                 stack.pop();
