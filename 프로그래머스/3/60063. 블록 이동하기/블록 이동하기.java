@@ -2,55 +2,49 @@ import java.util.*;
 
 class Solution {
     int N;
-    int[][] map;
+    int[][] board;
     Queue<Robot> q;
     boolean[][][] visited;
     
     public int solution(int[][] board) {
         N = board.length;
-        map = new int[N + 2][N + 2];
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                map[i + 1][j + 1] = 1 - board[i][j];
-            }
-        }
+        this.board = board;
         
         int answer = 0;
-        visited = new boolean[2][N + 2][N + 2];
+        visited = new boolean[2][N][N];
         q = new ArrayDeque<>();
         
-        addQueue(1, 2, 0);
+        addQueue(0, 1, 0);
         
         while (!q.isEmpty()) {
             int size = q.size();
             while (size-- > 0) {
                 Robot cur = q.poll();
-                if (cur.r == N && cur.c == N) {
+                if (cur.r == N - 1 && cur.c == N - 1) {
                     return answer;
                 }
                 if (cur.v == 0) {
-                    if (map[cur.r][cur.c - 2] == 1) {
+                    if (canGo(cur.r, cur.c - 2)) {
                         addQueue(cur.r, cur.c - 1, 0);
                     }
-                    if (map[cur.r][cur.c + 1] == 1) {
+                    if (canGo(cur.r, cur.c + 1)) {
                         addQueue(cur.r, cur.c + 1, 0);
                     }
                     for (int i = 0; i < 2; i++) {
-                        
                         int r = cur.r + i;
                         int c1 = cur.c - 1;
                         int c2 = cur.c;
-                        if (map[r - 1 + i][c1] == 1 && map[r - 1 + i][c2] == 1) {
+                        if (canGo(r - 1 + i, c1) && canGo(r - 1 + i, c2)) {
                             addQueue(r, c1, 1);
                             addQueue(r, c2, 1);
                             addQueue(r - 1 + i, cur.c, 0);
                         }
                     }
                 } else {
-                    if (map[cur.r - 2][cur.c] == 1) {
+                    if (canGo(cur.r - 2, cur.c)) {
                         addQueue(cur.r - 1, cur.c, 1);
                     }
-                    if (map[cur.r + 1][cur.c] == 1) {
+                    if (canGo(cur.r + 1, cur.c)) {
                         addQueue(cur.r + 1, cur.c, 1);
                     }
                     for (int i = 0; i < 2; i++) {
@@ -58,7 +52,7 @@ class Solution {
                         int c = cur.c + i;
                         int r1 = cur.r - 1;
                         int r2 = cur.r;
-                        if (map[r1][c - 1 + i] == 1 && map[r2][c - 1 + i] == 1) {
+                        if (canGo(r1, c - 1 + i) && canGo(r2, c - 1 + i)) {
                             addQueue(r1, c, 0);
                             addQueue(r2, c, 0);
                             addQueue(cur.r, c - 1 + i, 1);
@@ -70,6 +64,16 @@ class Solution {
         }
         
         return answer;
+    }
+    
+    boolean canGo(int r, int c) {
+        if (r < 0 || c < 0 || r >= N || c >= N) {
+            return false;
+        }
+        if (board[r][c] == 1) {
+            return false;
+        }
+        return true;
     }
     
     void addQueue(int r, int c, int v) {
