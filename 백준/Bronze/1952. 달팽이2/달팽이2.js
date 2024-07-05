@@ -17,16 +17,14 @@ const isValid = (i, R) => {
 
 while (n-- > 0) {
     visited[i][j] = true;
-    i += dr[dir];
-    j += dc[dir];
-    if (!isValid(i, R) || !isValid(j, C) || visited[i][j]) {
-        i -= dr[dir];
-        j -= dc[dir];
+    const nr = i + dr[dir];
+    const nc = j + dc[dir];
+    if (!isValid(nr, R) || !isValid(nc, C) || visited[nr][nc]) {
         dir = (dir + 1) % 4;
         count++;
-        i += dr[dir];
-        j += dc[dir];
     }
+    i += dr[dir];
+    j += dc[dir];
 }
 
 console.log(count);
