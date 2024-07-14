@@ -5,13 +5,9 @@ function solution(cacheSize, cities) {
     if (cacheSize === 0) {
         return cities.length * CACHE_MISS;
     }
-    
+
     const cache = Array(cacheSize);
-    let time = 0;
-    for (let i = 0; i < cities.length; i++) {
-        time += search(cache, cities[i].toLowerCase());
-    }
-    return time;
+    return cities.reduce((time, city) => time + search(cache, city.toLowerCase()), 0);
 }
 
 const search = (cache, city) => {
