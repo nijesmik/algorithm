@@ -1,5 +1,5 @@
 function solution(n, k) {
-    return n.toString(k).split(/0+/).map(Number).sort()
+    return n.toString(k).split(/0+/).map(Number)
         .filter(isPrime).length;
 }
 
