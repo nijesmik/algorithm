@@ -31,14 +31,10 @@ const solution = ([size, ...input]) => {
   const bascket = input.slice(0, N).map((e) => e.split(' ').map(Number));
   const command = input.slice(N).map((e) => e.split(' ').map(Number));
 
-  const move = ([r, c], s, [dr, dc]) => {
-    let [nr, nc] = [r + dr * s, c + dc * s];
-    while (nr < 0 || nc < 0) {
-      nr += N;
-      nc += N;
-    }
-    return [nr % N, nc % N];
-  };
+  const move = ([r, c], s, [dr, dc]) => [
+    (((r + dr * s) % N) + N) % N,
+    (((c + dc * s) % N) + N) % N,
+  ];
 
   let clouds = [
     [N - 2, 0],
