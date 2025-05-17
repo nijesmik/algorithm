@@ -15,11 +15,9 @@ function solution(genres, plays) {
         return map;
     }, {});
     
-    const rank = Object.values(genreMap).sort((a, b) => b.play - a.play)
-    rank.forEach((genre) => genre.list.sort((a, b) => b.play - a.play))
-        
-    const answer = rank.map((genre) => genre.list.slice(0, 2)
-                            .map((song) => song.index)).flat()
-    
-    return answer;
+    return Object.values(genreMap)
+                .sort((a, b) => b.play - a.play)
+                .map((genre) => genre.list.sort((a, b) => b.play - a.play).slice(0, 2))
+                .flat()
+                .map((song) => song.index);
 }
