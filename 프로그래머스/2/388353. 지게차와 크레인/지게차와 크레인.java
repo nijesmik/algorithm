@@ -70,10 +70,9 @@ class Solution {
     public int solution(String[] storage, String[] requests) {
         itemsRow = storage.length;
         itemsCol = storage[0].length();
-        items = new char[itemsRow][itemsCol];
-        for (int r = 0; r < itemsRow; r++) {
-            items[r] = storage[r].toCharArray();
-        }
+        items = items = Arrays.stream(storage)
+            .map(String::toCharArray)
+            .toArray(char[][]::new);
 
         for (String request : requests) {
             int method = request.length();
