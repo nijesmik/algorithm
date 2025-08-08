@@ -1,13 +1,13 @@
 import java.util.*;
+import java.util.stream.*;
 
 public class Solution {
     public String solution(long n, String[] bans) {
-        List<Long> bannedNums = new ArrayList<>();
-        for (String ban : bans) {
-            long num = spellToNum(ban);
-            bannedNums.add(num);
-        }
-        bannedNums.sort(Comparator.naturalOrder());
+        List<Long> bannedNums = Arrays.stream(bans)
+                .mapToLong(this::spellToNum)
+                .sorted()
+                .boxed()
+                .collect(Collectors.toList());
 
         for (long num : bannedNums) {
             if (num <= n) {
