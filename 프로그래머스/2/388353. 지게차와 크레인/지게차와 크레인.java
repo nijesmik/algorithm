@@ -13,49 +13,56 @@ class Solution {
             }
         }
     }
-    
-    int[] dr = {1, -1, 0, 0};
-    int[] dc = {0, 0, 1, -1};
-    void car(char target) {
-        Queue<int[]> q = new LinkedList<>();
-        boolean[][] visited = new boolean[itemsRow][itemsCol];
-        for (int c = 0; c < itemsCol; c++) {
-            q.add(new int[]{0, c});
-            visited[0][c] = true;
-            
-            q.add(new int[]{itemsRow - 1, c});
-            visited[itemsRow - 1][c] = true;
-        }
-        for (int r = 1; r < itemsRow - 1; r++) {
-            q.add(new int[]{r, 0});
-            visited[r][0] = true;
-            
-            q.add(new int[]{r, itemsCol - 1});
-            visited[r][itemsCol - 1] = true;
-        }
 
-        while (!q.isEmpty()) {
-            int[] position = q.poll();
-            int r = position[0];
-            int c = position[1];
-            char item = items[r][c];
+
+    void car(char target) {
+        class BFS extends LinkedList<int[]>  {
+            boolean[][] visited = new boolean[itemsRow][itemsCol];
+            int[] dr = {1, -1, 0, 0};
+            int[] dc = {0, 0, 1, -1};
+
+            void add(int r, int c) {
+                super.add(new int[]{r, c});
+                visited[r][c] = true;
+            }
             
-            if (item == target) {
-                items[r][c] = 0;
-            } else if (item == 0) {
+            void addNext(int r, int c) {
                 for (int i = 0; i < 4; i++) {
                     int nr = r + dr[i];
                     int nc = c + dc[i];
-                    if (isValidPosition(nr,nc) && !visited[nr][nc]) {
-                        visited[nr][nc] = true;
-                        q.add(new int[]{nr, nc});
+                    if (isValidPosition(nr, nc) && !visited[nr][nc]) {
+                        add(nr, nc);
                     }
                 }
             }
-            
+        }
+
+        BFS bfs = new BFS();
+
+        for (int c = 0; c < itemsCol; c++) {
+            bfs.add(0, c);
+            bfs.add(itemsRow - 1, c);
+        }
+        for (int r = 1; r < itemsRow - 1; r++) {
+            bfs.add(r, 0);
+            bfs.add(r, itemsCol - 1);
+        }
+
+        while (!bfs.isEmpty()) {
+            int[] position = bfs.poll();
+            int r = position[0];
+            int c = position[1];
+            char item = items[r][c];
+
+            if (item == target) {
+                items[r][c] = 0;
+            } else if (item == 0) {
+                bfs.addNext(r, c);
+            }
+
         }
     }
-    
+
     boolean isValidPosition(int r, int c) {
         return r >= 0 && r < itemsRow && c >= 0 && c < itemsCol;
     }
