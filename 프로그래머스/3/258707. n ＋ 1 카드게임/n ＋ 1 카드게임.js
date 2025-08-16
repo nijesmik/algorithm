@@ -4,7 +4,7 @@ function solution(coin, cards) {
     const deck = new Set(cards.slice(0, index));
     const temp = new Set();
     
-    const getPair = (cardSet) => {
+    const getPairCard = (cardSet) => {
         for (card of cardSet) {
             if (cardSet.has(n - card)) {
                 return card;
@@ -13,7 +13,7 @@ function solution(coin, cards) {
         return 0;
     }
     
-    const addDeck = (card) => {
+    const buyCard = (card) => {
         if (deck.has(n - card) && coin > 0) {
             deck.add(card);
             coin--;
@@ -28,11 +28,11 @@ function solution(coin, cards) {
         const pick2 = cards[index + 1];
         index += 2;
         
-        addDeck(pick1);
-        addDeck(pick2);
+        buyCard(pick1);
+        buyCard(pick2);
         
-        const card = getPair(deck);
-        const tempCard = getPair(temp);
+        const card = getPairCard(deck);
+        const tempCard = getPairCard(temp);
         
         if (card > 0) {
             deck.delete(card);
@@ -40,7 +40,7 @@ function solution(coin, cards) {
             round++;
         } else if (coin >= 2 && tempCard > 0) {
             temp.delete(tempCard);
-            deck.delete(n - tempCard);
+            temp.delete(n - tempCard);
             coin -= 2;
             round++;
         } else {
