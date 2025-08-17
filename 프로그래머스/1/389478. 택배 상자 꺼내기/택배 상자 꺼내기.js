@@ -1,6 +1,7 @@
 const getPosition = (num, w) => {
+    num--;
     const row = Math.floor(num / w);
-    const col = (num - 1) % w;
+    const col = num % w;
     if (row % 2 == 1) {
         return [row, w - 1 - col];
     }
@@ -9,18 +10,11 @@ const getPosition = (num, w) => {
 
 function solution(n, w, num) {
     const [row, col] = getPosition(num, w);
+    const [top_r, top_c] = getPosition(n, w);
     
-    let top_num = num;
-    let top_row = row;
-    
-    while (top_num <= n) {
-        if (top_row % 2 == 1) {
-            top_num += col * 2 + 1;
-        } else {
-            top_num += (w - 1 - col) * 2 + 1;
-        }
-        top_row++;
+    const answer = top_r - row + 1;
+    if ((col < top_c && top_r % 2 == 1) || (top_c < col && top_r % 2 == 0) ) {
+        return answer - 1;       
     }
-    
-    return top_row - row;
+    return answer;
 }
