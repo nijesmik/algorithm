@@ -30,9 +30,8 @@ function solution(video_len, pos, op_start, op_end, commands) {
         return op_end;
     }
     
-    const m = Math.floor(moved_time / 60);
-    const m_str = m < 10 ? `0${m}` : m;
-    const s = moved_time % 60;
-    const s_str = s < 10 ? `0${s}` : s;
-    return `${m_str}:${s_str}`;
+    return [Math.floor(moved_time / 60), moved_time % 60]
+            .map((n) => n.toString())
+            .map((s) => s.padStart(2, '0'))
+            .join(":");
 }
