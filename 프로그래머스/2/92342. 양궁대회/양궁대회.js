@@ -3,18 +3,15 @@ function solution(n, info) {
     let answer = [-1];
     let maxDiff = 0;
     
-    const compare = () => {
-        let diff = 0;
-        
-        for (let i = 0; i < 11; i++) {
-            if (!info[i] && !info_ryan[i]) {
-                continue;
-            }
-            
-            const point = 10 - i;
-            diff += info[i] >= info_ryan[i] ? -point : point;
+    const getDiff = (i) => {
+        if (!info[i] && !info_ryan[i]) {
+            return 0;
         }
-        
+        const point = 10 - i;
+        return info[i] >= info_ryan[i] ? -point : point;
+    }
+    
+    const compare = (diff) => {        
         if (diff <= 0 || diff < maxDiff) {
             return;
         }
@@ -36,23 +33,20 @@ function solution(n, info) {
         }
     }
     
-    const dfs = (k, depth) => {
-        if (k === 0) {
-            compare(info, info_ryan)
-            return;
-        }
+    const dfs = (k, depth, diff) => {
         if (depth === 11) {
+            if (k === 0) compare(diff);
             return;
         }
         
         for (let i = k; i >= 0; i--) {
             info_ryan[depth] = i;
-            dfs(k - i, depth + 1);
+            dfs(k - i, depth + 1, diff + getDiff(depth));
             info_ryan[depth] = 0;
         }
     }
         
-    dfs(n, 0)
+    dfs(n, 0, 0);
     
     return answer;
 }
