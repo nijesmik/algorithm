@@ -1,10 +1,10 @@
 function solution(n, info) {
     const info_ryan = Array.from({length: 11}, () => 0);
     let answer = [-1];
-    let max = 0;
+    let maxDiff = 0;
     
     const compare = () => {
-        let score_a = 0, score_r = 0;
+        let diff = 0;
         
         for (let i = 0; i < 11; i++) {
             if (!info[i] && !info_ryan[i]) {
@@ -12,28 +12,27 @@ function solution(n, info) {
             }
             
             const point = 10 - i;
-            if (info[i] >= info_ryan[i]) {
-                score_a += point;
-            } else {
-                score_r += point;
-            }
+            diff += info[i] >= info_ryan[i] ? -point : point;
         }
         
-        const diff = score_r - score_a
-        if (diff > 0) {
-            if (diff > max) {
-                max = diff;
+        if (diff <= 0 || diff < maxDiff) {
+            return;
+        }
+        
+        if (diff > maxDiff) {
+            maxDiff = diff;
+            answer = [...info_ryan];
+            return;
+        }
+        
+        // diff === maxDiff
+        for (let i = 10; i >= 0; i--) {
+            if (answer[i] === info_ryan[i]) {
+                continue;
+            } else if (answer[i] < info_ryan[i]) {
                 answer = [...info_ryan];
-            } else if (diff === max) {
-                for (let i = 10; i >= 0; i--) {
-                    if (answer[i] === info_ryan[i]) {
-                        continue;
-                    } else if (answer[i] < info_ryan[i]) {
-                        answer = [...info_ryan];
-                    }
-                    return;
-                }
             }
+            return;
         }
     }
     
