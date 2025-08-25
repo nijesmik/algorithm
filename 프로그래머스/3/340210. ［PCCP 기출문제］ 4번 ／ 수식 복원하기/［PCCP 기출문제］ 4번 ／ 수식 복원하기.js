@@ -4,17 +4,17 @@ function solution(expressions) {
     
     expressions.forEach((exp) => {
         const splited = exp.split(" ");
+        const [num1, op, num2, _, num3] = splited;
 
-        if (splited[4] === 'X') {
+        if (num3 === 'X') {
             x.push(splited);
             return;
         }
         
-        if (splited[1] === '-') {
-            const ans = splited[4];
-            splited[4] = splited[0];
-            splited[0] = ans;
+        if (op === '-') {
+            splited[0] = num3;
             splited[1] = '+';
+            splited[4] = num1;
         }
         
         o.push(splited);
@@ -24,58 +24,54 @@ function solution(expressions) {
     let candidate = 2;
     
     o.forEach((exp) => {
-        const [num1, _, num2, __, num3] = exp;
+        const [num1, op, num2, _, num3] = exp;
         
+        let i = num1.length - 1;
+        let j = num2.length - 1;
         let k = num3.length - 1;
-        for (let i = num1.length - 1, j = num2.length - 1; i >= 0 && j >= 0; i--, j--) {
+        for (; i >= 0 && j >= 0; i--, j--, k--) {
             const a = Number(num1[i]);
             const b = Number(num2[j]);
             const c = Number(num3[k]);
 
             if (a + b > c) {
-                base = a + b - c;
+                base = Math.max(base, a + b - c);
             } else {
                 candidate = Math.max(candidate, a + 1, b + 1, c + 1);
             }
-            
-            k--;
         }
     })
     
-    const updateCandidate = (num) => {
-        for (let c of num) {
-            candidate = Math.max(candidate, Number(c) + 1);
+    x.forEach((exp) => exp.filter((str) => /^\d+$/.test(str)).forEach((num) => {
+        for (let digit of num) {
+            candidate = Math.max(candidate, Number(digit) + 1);
         }
-    }
+    }))
     
-    x.forEach((exp) => exp.filter((_, i) => i % 2 == 0 && i < 4).forEach(updateCandidate))
-    
-    if (base != 0) {
-        base = Math.max(base, candidate);
-    } else if (candidate === 9) {
+    if (candidate === 9) {
         base = 9;
     }
     
     return x.map((exp) => {
-        const [num1, sign, num2] = exp;
-        const s = sign === '+' ? 1 : -1;
+        const [num1, op, num2] = exp;
+        const sign = op === '+' ? 1 : -1;
         
         if (base != 0) {
-            exp[4] = (parseInt(num1, base) + parseInt(num2, base) * s).toString(base);
+            exp[4] = (parseInt(num1, base) + parseInt(num2, base) * sign).toString(base);
             return exp.join(" ");
         }
         
         for (let i = num1.length - 1, j = num2.length - 1; i >= 0 && j >= 0; i--, j--) {
             const a = Number(num1[i]);
             const b = Number(num2[j]);
-            const isPossible = s > 0 ? a + b < candidate : a - b >= 0;
+            const isPossible = sign > 0 ? a + b < candidate : a - b >= 0;
             if (!isPossible) {
                 exp[4] = '?';
                 return exp.join(" ");
             }
         }
         
-        exp[4] = (parseInt(num1) + parseInt(num2) * s).toString();
+        exp[4] = (parseInt(num1) + parseInt(num2) * sign).toString();
         return exp.join(" ");
     });
 }
