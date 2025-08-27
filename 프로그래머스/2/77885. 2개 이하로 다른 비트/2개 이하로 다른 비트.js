@@ -1,10 +1,8 @@
-const MAX_LENGTH = Math.pow(10, 15).toString(2).length;
-
 function solution(numbers) {
     return numbers
-        .map((num) => [...num.toString(2).padStart(MAX_LENGTH, '0')])
+        .map((num) => ['0', ...num.toString(2)])
         .map((num) => {
-            for (let i = MAX_LENGTH - 1; i >= 0; i--) {
+            for (let i = num.length - 1; i >= 0; i--) {
                 if (num[i] === '0') {
                     num[i] = '1';
                     break;
