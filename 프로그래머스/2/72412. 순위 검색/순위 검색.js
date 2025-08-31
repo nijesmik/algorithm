@@ -3,7 +3,7 @@ function solution(info, query) {
     
     const addScore = (key, score) => {
         if (!map.has(key)) {
-            map.set(key, [0]);
+            map.set(key, []);
         }
         map.get(key).push(score);
     }
@@ -32,18 +32,18 @@ function solution(info, query) {
     
     const bs = (scores, target) => {
         let start = 0;
-        let end = scores.length - 1;
+        let end = scores.length;
         
-        while (start <= end) {
+        while (start < end) {
             const mid = Math.floor((start + end) / 2);
             if (scores[mid] < target) {
                 start = mid + 1;
             } else {
-                end = mid - 1;
+                end = mid;
             }
         }
         
-        return scores.length - 1 - end;
+        return scores.length - start;
     }
     
     return query.map((q) => {
