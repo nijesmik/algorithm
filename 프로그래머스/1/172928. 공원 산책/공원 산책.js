@@ -6,16 +6,10 @@ const DIRECTION = {
 }
 
 function solution(park, routes) {
-    let position;
-    
-    park.forEach((row, i) => {
-        for (let j = 0; j < row.length; j++) {
-            const type = row[j];
-            if (type === 'S') {
-                position = [i, j];
-            }
-        }
-    })
+    let position = park.reduce((pos, row, x) => {
+        const y = row.search(/S/);
+        return y > -1 ? [x, y] : pos;
+    }, []);
     
     const isValid = (r, c) => 0 <= r && r < park.length && 0 <= c && c < park[0].length;
     
