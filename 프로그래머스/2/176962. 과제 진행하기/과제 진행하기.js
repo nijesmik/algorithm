@@ -6,15 +6,16 @@ function solution(plans) {
     
     const answer = [];
     const wip = [];
+    let offset = 0;
     
     for (const [curr, start, take] of plans) {
-        while (wip.length > 0 && wip[wip.length - 1][1] <= start) {
+        while (wip.length > 0 && wip[wip.length - 1][1] + offset <= start) {
             const [done] = wip.pop();
             answer.push(done);
         }
         
-        wip.forEach((_, i) => wip[i][1] += take);
-        wip.push([curr, start + take]);
+        offset += take;
+        wip.push([curr, start + take - offset]);
     }
     
     let n = wip.length;
