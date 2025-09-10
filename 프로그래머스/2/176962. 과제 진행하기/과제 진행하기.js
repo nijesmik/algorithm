@@ -15,7 +15,6 @@ function solution(plans) {
         
         wip.forEach((_, i) => wip[i][1] += take);
         wip.push([curr, start + take]);
-        wip.sort((a, b) => b[1] - a[1]);
     }
     
     let n = wip.length;
