@@ -1,20 +1,16 @@
 function solution(s, skip, index) {
-    const skipped = new Set(Array.from({length: skip.length}, (_, i) => skip.charCodeAt(i)));
-    const map = new Map();
-    const start = 'a'.charCodeAt(0);
+    const skipped = new Set(skip);
+    const code_a = 'a'.charCodeAt(0);
     
+    const alphabets = [];
     for (let i = 0; i < 26; i++) {
-        let offset = 0;
-        let n = 1;
-        while (n <= index) {
-            if (skipped.has(start + (i + n + offset) % 26)) {
-                offset++;
-            } else {
-                n++;
-            }
-        } 
-        map.set(String.fromCharCode(start + i), String.fromCharCode(start + (i + index + offset) % 26));
+        const char = String.fromCharCode(code_a + i);
+        if (!skipped.has(char)) {
+            alphabets.push([char, alphabets.length]);
+        }
     }
     
-    return Array.from(s).map((char) => map.get(char)).join('');
+    const map = new Map(alphabets);
+    
+    return Array.from(s).map((char) => alphabets[(map.get(char) + index) % alphabets.length][0]).join('');
 }
