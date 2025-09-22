@@ -1,10 +1,11 @@
 function solution(a, b, n) {
-    const answer = new Array(n + 1).fill(0);
+    let answer = 0;
     
-    for (let i = 2; i <= n; i++) {
-        const bottle = Math.floor(i / a) * b;
-        answer[i] = bottle + answer[bottle + i % a];
+    while (n >= a) {
+        const bottle = Math.floor(n / a) * b;
+        answer += bottle;
+        n = bottle + n % a;
     }
     
-    return answer[n];
+    return answer;
 }
