@@ -17,7 +17,7 @@ function solution(X, Y) {
         return '-1';        
     }
 
-    if (result.length === 1 && result[0][0] === '0') {
+    if (result[0] == 0) {
         return '0';
     }
 
