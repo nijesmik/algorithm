@@ -79,8 +79,8 @@ function solution(maze) {
                 }
                 
                 const visited = copy(v);
-                visited[nr[0]][nr[1]] += 1;
-                visited[nb[0]][nb[1]] += 2;
+                visited[nr[0]][nr[1]] |= 1;
+                visited[nb[0]][nb[1]] |= 2;
                 queue.push([nr, nb, visited, time + 1]);
             })
         })
