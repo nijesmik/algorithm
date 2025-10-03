@@ -2,25 +2,15 @@ function solution(commands) {
     const n = 50 * 50;
     const empty = 'EMPTY';
     const answer = [];
-    const cells = new Array(n).fill(empty);    
-    const parents = Array.from({length: n}, (_, i) => i);
-    
-    const getParent = (index) => {
-        if (parents[index] === index) {
-            return index;
-        }
-        const p = getParent(parents[index]);
-        parents[index] = p;
-        return p;
-    }
+    const cells = Array.from({length: n}, (_, i) => ({value: empty}));
 
     const index = (r, c) => (r - 1) * 50 + (c - 1);
     
     const updateAll = (params) => {
         const [prev, next] = params;
-        cells.forEach((v, i) => {
-            if (v === prev) {
-                cells[i] = next;
+        cells.forEach((cell) => {
+            if (cell.value === prev) {
+                cell.value = next;
             }
         })
     }
@@ -31,15 +21,21 @@ function solution(commands) {
         }
         
         const [r, c, value] = params;
-        const idx = getParent(index(Number(r), Number(c)));
-        cells[idx] = value;
+        cells[index(Number(r), Number(c))].value = value;
     }
     
     const print = (params) => {
         const [r, c] = params.map(Number);
-        const idx = getParent(index(r, c));
-        answer.push(cells[idx]);
+        answer.push(cells[index(r, c)].value);
     }
+    
+    const replace = (from, to) => cells.forEach(
+        (cell, i) => {
+            if (cell === from) {
+                cells[i] = to;
+            }
+        }
+    )
     
     const merge = (params) => {
         const [r1, c1, r2, c2] = params.map(Number);
@@ -47,28 +43,27 @@ function solution(commands) {
             return;
         }
         
-        const idx1 = getParent(index(r1, c1));
-        const idx2 = getParent(index(r2, c2));
-        const value = cells[idx1] === empty ? cells[idx2] : cells[idx1];
-        parents[idx1] = idx2;
-        cells[idx2] = value;
+        const cell1 = cells[index(r1, c1)];
+        const cell2 = cells[index(r2, c2)];
+        if (cell1.value === empty) {
+            replace(cell1, cell2);
+        } else {
+            replace(cell2, cell1);
+        }
     }
     
     const unmerge = (params) => {
         const [r, c] = params.map(Number);
         const idx = index(r, c);
-        const parent = getParent(idx);
-        const value = cells[parent];
-        
-        const unmerged = [];
-        parents.forEach((v, i) => {
-            if (getParent(v) === parent) {
-                cells[i] = empty;
-                unmerged.push(i);
+        const unmerged = cells[idx];
+        cells.forEach((cell, i) => {
+            if (cell === unmerged) {
+                cells[i] = {
+                    value: empty,
+                }
             }
-        })
-        unmerged.forEach((i) => parents[i] = i);
-        cells[idx] = value;
+        });
+        cells[idx] = unmerged;
     }
     
     commands.forEach((cmd) => {
